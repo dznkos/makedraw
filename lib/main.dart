@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pruebas_app/src/pages/basic_page.dart';
 import 'package:pruebas_app/src/pages/middle_page.dart';
+import 'package:pruebas_app/src/pages/principal_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'basico' : ( BuildContext context) => BasicPage(),
         'middle' : ( BuildContext context) => MiddlePage(),
+        'princ'  : ( BuildContext context) => PrincipalPage(),
       },
 
     );

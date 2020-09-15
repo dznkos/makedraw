@@ -11,7 +11,7 @@ class MiddlePage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: [
           _paginaUno(),
-          _paginaDos(),
+          _paginaDos(context),
         ],
       )
     );
@@ -66,9 +66,27 @@ class MiddlePage extends StatelessWidget {
     );
   }
 
-  Widget _paginaDos() {
-    return Image(image: AssetImage('assets/sunset.jpg')
-                ,fit: BoxFit.cover,);
+  Widget _paginaDos(BuildContext context) {
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      color: Color.fromRGBO(108, 192, 218, 1.0),
+      child: Center(
+        child: RaisedButton(
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: () {
+              Navigator.pushNamed(context, 'princ');
+
+            },
+            shape: StadiumBorder(),
+            child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 35, vertical: 15),
+                child: Text('Bievenido', style: TextStyle(fontSize: 16),),
+            )
+        ),
+      ),
+    );
 
   }
 }
