@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,17 +14,15 @@ class PrincipalPage extends StatelessWidget {
         children: [
             diseno(),
 
-
           SingleChildScrollView(
             child: Column(
               children: [
                 _tituloGrid(),
+                mainGrid(),
               ],
             ),
           )
         ],
-
-
       ),
       bottomNavigationBar: _bottomNavigationBar(context),
     );
@@ -110,20 +109,60 @@ class PrincipalPage extends StatelessWidget {
 
   Widget mainGrid() {
     return Container(
-      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Table(
+            children: [
+              TableRow(
+                children: [
+                    _crearBotonGrid(),
+                    _crearBotonGrid()
+                ]
+              ),
+              TableRow(
+                  children: [
+                    _crearBotonGrid(),
+                    _crearBotonGrid()
+                  ]
+              ),
+              TableRow(
+                  children: [
+                    _crearBotonGrid(),
+                    _crearBotonGrid()
+                  ]
+              ),
+            ],
+        ),
+    );
+  }
+
+  Widget _crearBotonGrid(){
+    return Container(
+      height: 130,
+      margin: EdgeInsets.all(10.0) ,
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.8),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-            _tituloGrid(),
-            _iconsGrid(),
+
+          CircleAvatar(
+            backgroundColor: Colors.pinkAccent,
+            radius: 20,
+            child: Icon( Icons.phone, color: Colors.blue, size: 20,),
+          ),
+          Text('Datos', style: TextStyle( color: Colors.pinkAccent),),
+          SizedBox(height: 1),
+
         ],
       ),
     );
-
   }
 
   Widget _tituloGrid() {
     return Container(
-      padding: EdgeInsets.only(right: 45, left: 5),
+      padding: EdgeInsets.only(right: 45, left: 20, bottom: 15 ),
       child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -141,105 +180,6 @@ class PrincipalPage extends StatelessWidget {
     );
   }
 
-  Widget _iconsGrid() {
-
-    return Container(
-      padding: EdgeInsets.all(30),
-      width: double.infinity,
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(15),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(15),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(15),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  width: 120,
-                  height: 120,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-              ),
-            ],
-          )
-
-        ],
-      ),
-
-
-    );
-
-  }
 
 
 
