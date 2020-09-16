@@ -12,10 +12,52 @@ class PrincipalPage extends StatelessWidget {
       body: Stack(
         children: [
             diseno(),
-            mainGrid()
+
+
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                _tituloGrid(),
+              ],
+            ),
+          )
         ],
+
+
       ),
+      bottomNavigationBar: _bottomNavigationBar(context),
     );
+  }
+
+  Widget _bottomNavigationBar(BuildContext context){
+
+    return new Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Color.fromRGBO(55, 57, 84, 1.0),
+          primaryColor: Colors.pinkAccent,
+          textTheme: Theme.of(context).textTheme.copyWith(
+            caption: TextStyle( color: Color.fromRGBO(116, 117, 152, 1.0))
+          )
+        ),
+        child: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon( Icons.calendar_today, size: 30.0,),
+                  title: Container(),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon( Icons.bubble_chart, size: 30.0,),
+                title: Container(),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon( Icons.supervised_user_circle, size: 30.0,),
+                title: Container(),
+              )
+
+            ]
+        )
+    );
+
   }
 
   
@@ -68,17 +110,11 @@ class PrincipalPage extends StatelessWidget {
 
   Widget mainGrid() {
     return Container(
-      height: double.infinity,
       width: double.infinity,
-      //color: Colors.blue,
       child: Column(
-        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-              child: _tituloGrid(),
-              padding: EdgeInsets.symmetric(horizontal: 50)
-          ),
-          //_iconsGrid()
+            _tituloGrid(),
+            _iconsGrid(),
         ],
       ),
     );
@@ -86,22 +122,122 @@ class PrincipalPage extends StatelessWidget {
   }
 
   Widget _tituloGrid() {
-    return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 60),
-            Text('Clasificacion transacciones', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
-            SizedBox(height: 10,),
-            Text('Classify thsi trasaction into a particular cateogy',textAlign: TextAlign.left, style: TextStyle(fontSize: 16, color: Colors.white,),),
+    return Container(
+      padding: EdgeInsets.only(right: 45, left: 5),
+      child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 60),
+              Text('Clasificacion transacciones', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+              SizedBox(height: 10,),
+              Container(
+                width: 220,
+                //color: Colors.pink,
+                child: Text('Classify thsi trasaction into a particular cateogy',maxLines: 2, style: TextStyle(fontSize: 16, color: Colors.white,),),
+              )
 
-
-
-
-          ],
+            ],
+      ),
     );
   }
 
   Widget _iconsGrid() {
+
+    return Container(
+      padding: EdgeInsets.all(30),
+      width: double.infinity,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(15),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(15),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(15),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  width: 120,
+                  height: 120,
+                  //color: Colors.red,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+              ),
+            ],
+          )
+
+        ],
+      ),
+
+
+    );
 
   }
 
