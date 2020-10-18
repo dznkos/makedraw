@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Prueba 1',
-      initialRoute: 'basico',
+      initialRoute: 'middle',
       routes: {
         'basico' : ( BuildContext context) => BasicPage(),
         'middle' : ( BuildContext context) => MiddlePage(),

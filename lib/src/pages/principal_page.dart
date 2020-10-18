@@ -12,7 +12,6 @@ class PrincipalPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           _fondoApp(),
-
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
